@@ -1,0 +1,153 @@
+{
+  "site": {
+    "name": "CloudNerve",
+    "tagline": "Innovative IT Solutions for Modern Businesses",
+    "description": "CloudNerve delivers cutting-edge IT solutions, cloud services, and digital transformation expertise to empower your business in the digital age.",
+    "logo": "assets/cloudnerve-logo.png"
+  },
+  "contact": {
+    "email": "info@cloudnerve.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "San Francisco, CA, USA"
+  },
+  "hero": {
+    "title": "Welcome to CloudNerve",
+    "subtitle": "Empowering Your Digital Future with Innovative IT Solutions",
+    "video": "assets/cloud.mp4",
+    "primaryButton": {
+      "text": "Explore Services",
+      "link": "services.html"
+    },
+    "secondaryButton": {
+      "text": "Get in Touch",
+      "link": "contact.html"
+    }
+  },
+  "services": {
+    "pageTitle": "Our Expert Services",
+    "pageSubtitle": "Empowering your business with cutting-edge technology solutions tailored to your unique needs",
+    "items": [
+      {
+        "title": "Cloud Infrastructure",
+        "description": "Scalable cloud solutions powered by AWS, Azure, and Google Cloud. Migrate, optimize, and manage your infrastructure with enterprise-grade security and performance.",
+        "icon": "cloud"
+      },
+      {
+        "title": "Web Development",
+        "description": "Custom web applications built with cutting-edge technologies. From responsive websites to complex enterprise platforms, we deliver solutions that drive results.",
+        "icon": "web"
+      },
+      {
+        "title": "DevOps Solutions",
+        "description": "Streamline your development lifecycle with CI/CD pipelines, containerization, and automated deployment strategies that accelerate time-to-market.",
+        "icon": "devops"
+      },
+      {
+        "title": "Cybersecurity",
+        "description": "Protect your digital assets with comprehensive security solutions. From penetration testing to compliance management and threat monitoring.",
+        "icon": "security"
+      },
+      {
+        "title": "Digital Transformation",
+        "description": "Modernize your business processes with AI, machine learning, and automation. We help you leverage technology for competitive advantage.",
+        "icon": "transformation"
+      },
+      {
+        "title": "IT Consulting",
+        "description": "Strategic IT guidance from industry experts. We analyze your needs, design solutions, and provide ongoing support to ensure your success.",
+        "icon": "consulting"
+      }
+    ]
+  },
+  "about": {
+    "pageTitle": "Who We Are",
+    "pageSubtitle": "A team of passionate innovators dedicated to delivering excellence in technology",
+    "mainHeading": "Why Choose CloudNerve?",
+    "description1": "At CloudNerve, we're not just another IT company. We're your technology partner, committed to delivering innovative solutions that drive real business value.",
+    "description2": "With years of expertise in cloud computing, software development, and digital transformation, we help businesses of all sizes navigate the complexities of modern technology.",
+    "mission": "To empower businesses with cutting-edge technology solutions that drive innovation, efficiency, and sustainable growth in the digital age.",
+    "vision": "To be the leading IT solutions provider recognized for excellence, innovation, and transforming businesses through technology worldwide.",
+    "values": "Innovation, integrity, excellence, and customer success are at the core of everything we do. We build lasting partnerships based on trust and results."
+  },
+  "portfolio": {
+    "pageTitle": "Our Success Stories",
+    "pageSubtitle": "Discover how we've helped businesses achieve their technology goals",
+    "projects": [
+      {
+        "title": "Enterprise Cloud Migration",
+        "description": "Migrated Fortune 500 company infrastructure to AWS, reducing costs by 40% and improving performance by 60%.",
+        "category": "cloud",
+        "client": "TechCorp Industries",
+        "year": "2024",
+        "tags": ["Cloud Migration", "AWS"]
+      },
+      {
+        "title": "E-Commerce Platform Redesign",
+        "description": "Built scalable e-commerce platform serving 1M+ users with real-time inventory and AI-powered recommendations.",
+        "category": "web",
+        "client": "RetailHub",
+        "year": "2024",
+        "tags": ["Web App", "React"]
+      },
+      {
+        "title": "DevOps Pipeline Automation",
+        "description": "Implemented automated CI/CD pipeline reducing deployment time from 2 days to 2 hours with zero downtime.",
+        "category": "devops",
+        "client": "DataFlow Systems",
+        "year": "2023",
+        "tags": ["CI/CD", "Kubernetes"]
+      },
+      {
+        "title": "Banking Security Overhaul",
+        "description": "Comprehensive security audit and implementation achieving SOC 2 compliance and eliminating critical vulnerabilities.",
+        "category": "security",
+        "client": "SecureBank Digital",
+        "year": "2023",
+        "tags": ["Security Audit", "Compliance"]
+      },
+      {
+        "title": "AI-Powered Analytics Platform",
+        "description": "Developed cloud-native SaaS platform processing 10TB+ data daily with machine learning insights.",
+        "category": "cloud",
+        "client": "Analytics Pro",
+        "year": "2024",
+        "tags": ["SaaS", "Azure"]
+      },
+      {
+        "title": "Microservices Architecture",
+        "description": "Transformed monolithic application into scalable microservices architecture improving reliability and development speed.",
+        "category": "web",
+        "client": "StreamTech Media",
+        "year": "2023",
+        "tags": ["Microservices", "Docker"]
+      }
+    ]
+  },
+  "contact": {
+    "pageTitle": "Let's Connect",
+    "pageSubtitle": "Transform your vision into reality with our innovative IT solutions",
+    "formHeading": "Let's Build Something Amazing",
+    "formDescription": "Ready to transform your business with innovative IT solutions? Get in touch with our team today."
+  },
+  "footer": {
+    "brandDescription": "Empowering businesses with cutting-edge cloud and AI solutions. 200+ experts ready to transform your digital future.",
+    "quickLinks": [
+      { "text": "Home", "url": "index.html" },
+      { "text": "Services", "url": "services.html" },
+      { "text": "About", "url": "about.html" },
+      { "text": "Contact", "url": "contact.html" }
+    ],
+    "servicesLinks": [
+      { "text": "AI Automation", "url": "services.html#ai" },
+      { "text": "Voicebots & Chatbots", "url": "services.html#chatbots" },
+      { "text": "3D Websites", "url": "services.html#web" },
+      { "text": "Full Stack Development", "url": "services.html#development" }
+    ],
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    },
+    "copyright": "© 2025 CloudNerve. All rights reserved."
+  }
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudNerve Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>🔧 Admin Panel</h2>
+                <p>CloudNerve CMS</p>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-section="general">
+                    <span class="icon">⚙️</span>
+                    General Settings
+                </button>
+                <button class="nav-item" data-section="hero">
+                    <span class="icon">🎬</span>
+                    Hero Section
+                </button>
+                <button class="nav-item" data-section="services">
+                    <span class="icon">💼</span>
+                    Services
+                </button>
+                <button class="nav-item" data-section="about">
+                    <span class="icon">👥</span>
+                    About Page
+                </button>
+                <button class="nav-item" data-section="portfolio">
+                    <span class="icon">📁</span>
+                    Portfolio
+                </button>
+                <button class="nav-item" data-section="contact">
+                    <span class="icon">📧</span>
+                    Contact
+                </button>
+                <button class="nav-item" data-section="footer">
+                    <span class="icon">📄</span>
+                    Footer
+                </button>
+            </nav>
+            <div class="sidebar-actions">
+                <button class="btn btn-primary" id="saveBtn">💾 Save Changes</button>
+                <button class="btn btn-secondary" id="exportBtn">📤 Export Config</button>
+                <button class="btn btn-secondary" id="importBtn">📥 Import Config</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1 id="sectionTitle">General Settings</h1>
+                <div class="header-actions">
+                    <button class="btn-icon" id="previewBtn" title="Preview Website">
+                        <span>👁️</span> Preview
+                    </button>
+                    <button class="btn-icon" id="resetBtn" title="Reset to Defaults">
+                        <span>🔄</span> Reset
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- General Settings Section -->
+                <div class="section active" data-section="general">
+                    <div class="form-group">
+                        <label>Site Name</label>
+                        <input type="text" id="siteName" placeholder="CloudNerve">
+                    </div>
+                    <div class="form-group">
+                        <label>Site Tagline</label>
+                        <input type="text" id="siteTagline" placeholder="Innovative IT Solutions for Modern Businesses">
+                    </div>
+                    <div class="form-group">
+                        <label>Site Description</label>
+                        <textarea id="siteDescription" rows="3" placeholder="Enter site description..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Logo</label>
+                        <div class="file-input">
+                            <input type="text" id="siteLogo" placeholder="assets/cloudnerve-logo.png" readonly>
+                            <button class="btn-upload" data-target="siteLogo">Browse</button>
+                        </div>
+                        <div class="preview-box" id="logoPreview"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Email</label>
+                        <input type="email" id="contactEmail" placeholder="info@cloudnerve.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Phone</label>
+                        <input type="tel" id="contactPhone" placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="contactAddress" placeholder="San Francisco, CA, USA">
+                    </div>
+                </div>
+
+                <!-- Hero Section -->
+                <div class="section" data-section="hero">
+                    <div class="form-group">
+                        <label>Hero Title</label>
+                        <input type="text" id="heroTitle" placeholder="Welcome to CloudNerve">
+                    </div>
+                    <div class="form-group">
+                        <label>Hero Subtitle</label>
+                        <textarea id="heroSubtitle" rows="2" placeholder="Enter hero subtitle..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Hero Video</label>
+                        <div class="file-input">
+                            <input type="text" id="heroVideo" placeholder="assets/cloud.mp4" readonly>
+                            <button class="btn-upload" data-target="heroVideo">Browse</button>
+                        </div>
+                        <div class="preview-box" id="videoPreview"></div>
+                    </div>
+                    <div class="button-group">
+                        <div class="form-group">
+                            <label>Primary Button Text</label>
+                            <input type="text" id="heroPrimaryBtn" placeholder="Explore Services">
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Button Link</label>
+                            <input type="text" id="heroPrimaryLink" placeholder="services.html">
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <div class="form-group">
+                            <label>Secondary Button Text</label>
+                            <input type="text" id="heroSecondaryBtn" placeholder="Get in Touch">
+                        </div>
+                        <div class="form-group">
+                            <label>Secondary Button Link</label>
+                            <input type="text" id="heroSecondaryLink" placeholder="contact.html">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Section -->
+                <div class="section" data-section="services">
+                    <div class="form-group">
+                        <label>Services Page Title</label>
+                        <input type="text" id="servicesPageTitle" placeholder="Our Expert Services">
+                    </div>
+                    <div class="form-group">
+                        <label>Services Page Subtitle</label>
+                        <textarea id="servicesPageSubtitle" rows="2"></textarea>
+                    </div>
+                    <div class="services-list" id="servicesList"></div>
+                    <button class="btn btn-secondary" id="addServiceBtn">+ Add Service</button>
+                </div>
+
+                <!-- About Section -->
+                <div class="section" data-section="about">
+                    <div class="form-group">
+                        <label>About Page Title</label>
+                        <input type="text" id="aboutPageTitle" placeholder="Who We Are">
+                    </div>
+                    <div class="form-group">
+                        <label>About Page Subtitle</label>
+                        <textarea id="aboutPageSubtitle" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Main Heading</label>
+                        <input type="text" id="aboutMainHeading" placeholder="Why Choose CloudNerve?">
+                    </div>
+                    <div class="form-group">
+                        <label>Description 1</label>
+                        <textarea id="aboutDescription1" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Description 2</label>
+                        <textarea id="aboutDescription2" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Mission</label>
+                        <textarea id="aboutMission" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Vision</label>
+                        <textarea id="aboutVision" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Values</label>
+                        <textarea id="aboutValues" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <!-- Portfolio Section -->
+                <div class="section" data-section="portfolio">
+                    <div class="form-group">
+                        <label>Portfolio Page Title</label>
+                        <input type="text" id="portfolioPageTitle" placeholder="Our Success Stories">
+                    </div>
+                    <div class="form-group">
+                        <label>Portfolio Page Subtitle</label>
+                        <textarea id="portfolioPageSubtitle" rows="2"></textarea>
+                    </div>
+                    <div class="portfolio-list" id="portfolioList"></div>
+                    <button class="btn btn-secondary" id="addProjectBtn">+ Add Project</button>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="section" data-section="contact">
+                    <div class="form-group">
+                        <label>Contact Page Title</label>
+                        <input type="text" id="contactPageTitle" placeholder="Let's Connect">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Page Subtitle</label>
+                        <textarea id="contactPageSubtitle" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Form Heading</label>
+                        <input type="text" id="contactFormHeading" placeholder="Let's Build Something Amazing">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Form Description</label>
+                        <textarea id="contactFormDescription" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <!-- Footer Section -->
+                <div class="section" data-section="footer">
+                    <div class="form-group">
+                        <label>Brand Description</label>
+                        <textarea id="footerBrandDesc" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Copyright Text</label>
+                        <input type="text" id="footerCopyright" placeholder="© 2025 CloudNerve. All rights reserved.">
+                    </div>
+                    <div class="social-links">
+                        <div class="form-group">
+                            <label>LinkedIn URL</label>
+                            <input type="url" id="socialLinkedin" placeholder="https://linkedin.com/company/cloudnerve">
+                        </div>
+                        <div class="form-group">
+                            <label>Twitter URL</label>
+                            <input type="url" id="socialTwitter" placeholder="https://twitter.com/cloudnerve">
+                        </div>
+                        <div class="form-group">
+                            <label>GitHub URL</label>
+                            <input type="url" id="socialGithub" placeholder="https://github.com/cloudnerve">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">Changes saved successfully!</span>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
