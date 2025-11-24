@@ -326,7 +326,7 @@
                 const now = Date.now();
                 if (now < sessionData.expiry) {
                     // Valid session exists
-                    window.location.href = 'index.html';
+                    window.location.href = 'panel.html';
                     return true;
                 } else {
                     // Session expired
@@ -376,7 +376,7 @@
                     loginBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
 
                     setTimeout(() => {
-                        window.location.href = 'index.html';
+                        window.location.href = 'panel.html';
                     }, 500);
                 } else {
                     // Failed login
