@@ -315,16 +315,8 @@
     </div>
 
     <script>
-        // Default password hash (SHA-256 of "cloudnerve2025")
-        const DEFAULT_PASSWORD_HASH = 'e8d9c8f8a5b7c3e9f8d7b6a5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5';
-
-        // Simple SHA-256 implementation
-        async function sha256(message) {
-            const msgBuffer = new TextEncoder().encode(message);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
+        // Default password (you can change this)
+        const DEFAULT_PASSWORD = 'cloudnerve2025';
 
         // Check if already logged in
         function checkExistingSession() {
@@ -359,17 +351,16 @@
             // Focus password input
             passwordInput.focus();
 
-            form.addEventListener('submit', async (e) => {
+            form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 errorMessage.classList.remove('show');
 
                 const password = passwordInput.value;
-                const passwordHash = await sha256(password);
 
-                // Get custom password hash from localStorage, or use default
-                const storedHash = localStorage.getItem('admin_password_hash') || DEFAULT_PASSWORD_HASH;
+                // Get custom password from localStorage, or use default
+                const storedPassword = localStorage.getItem('admin_password') || DEFAULT_PASSWORD;
 
-                if (passwordHash === storedHash) {
+                if (password === storedPassword) {
                     // Successful login
                     const expiryDuration = rememberMe.checked ? 24 * 60 * 60 * 1000 : 4 * 60 * 60 * 1000; // 24h or 4h
                     const session = {
@@ -407,6 +398,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
