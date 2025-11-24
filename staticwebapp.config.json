@@ -1,22 +1,9 @@
 {
-    "routes": [
-        {
-            "route": "/admin",
-            "redirect": "/admin/index.html",
-            "statusCode": 301
-        },
-        {
-            "route": "/admin/",
-            "serve": "/admin/index.html",
-            "statusCode": 200
-        }
-    ],
     "navigationFallback": {
         "rewrite": "/index.html",
         "exclude": [
             "/admin/*",
-            "/assets/*",
-            "/*.{css,js,json,png,jpg,jpeg,svg,mp4,webp,ico,woff,woff2,ttf,otf}"
+            "/assets/*"
         ]
     },
     "mimeTypes": {
@@ -26,7 +13,8 @@
         ".mp4": "video/mp4",
         ".png": "image/png",
         ".jpg": "image/jpeg",
-        ".svg": "image/svg+xml"
+        ".svg": "image/svg+xml",
+        ".webp": "image/webp"
     },
     "globalHeaders": {
         "cache-control": "public, max-age=3600"
