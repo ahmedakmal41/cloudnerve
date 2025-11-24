@@ -6,6 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CloudNerve Admin Panel</title>
     <link rel="stylesheet" href="admin.css">
+    <script>
+        // Authentication check - redirect to login if not authenticated
+        function checkAuth() {
+            const session = localStorage.getItem('admin_session');
+            if (!session) {
+                window.location.href = 'login.html';
+                return false;
+            }
+
+            const sessionData = JSON.parse(session);
+            const now = Date.now();
+
+            if (now >= sessionData.expiry) {
+                localStorage.removeItem('admin_session');
+                window.location.href = 'login.html';
+                return false;
+            }
+
+            return true;
+        }
+
+        // Check auth on page load
+        if (!checkAuth()) {
+            document.write('<div style="display:none;">Redirecting to login...</div>');
+        }
+    </script>
 </head>
 
 <body>
@@ -64,6 +90,9 @@
                     </button>
                     <button class="btn-icon" id="resetBtn" title="Reset to Defaults">
                         <span>🔄</span> Reset
+                    </button>
+                    <button class="btn-icon" id="logoutBtn" title="Logout" style="border-color: #ef4444;">
+                        <span>🚪</span> Logout
                     </button>
                 </div>
             </header>

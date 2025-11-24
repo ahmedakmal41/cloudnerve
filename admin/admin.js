@@ -369,6 +369,14 @@ function setupEventListeners() {
             location.reload();
         }
     });
+
+    // Logout button
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+        if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('admin_session');
+            window.location.href = 'login.html';
+        }
+    });
 }
 
 // Switch section
